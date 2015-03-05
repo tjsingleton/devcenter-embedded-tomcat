@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(
         name = "MyServlet", 
-        urlPatterns = {"/hello"}
+        urlPatterns = {"/"}
     )
 public class HelloServlet extends HttpServlet {
 
@@ -19,7 +19,7 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         ServletOutputStream out = resp.getOutputStream();
-        out.write("hello alex ;)".getBytes());
+        out.write("<html><body><h2>Hello Alex!</h2><a href='https://github.com/tjsingleton/devcenter-embedded-tomcat'>Source</a></body></html>".getBytes());
         out.flush();
         out.close();
     }
